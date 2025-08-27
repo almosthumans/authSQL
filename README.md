@@ -1,3 +1,30 @@
+# Auth
+- statefull auth
+- sticky sessions
+- vertical and horz scaling
+- banks use, statefull auth (sessions)
+- not scalable but security
+
+- stateless auth: data to user, jwt encrypt
+- scalable >> secure
+- user can read but should not write
+- asymetric encyption -> stamp 
+- jwks
+
+- 2 standards for auth
+    - openid connect
+    - SAML
+- openid connect (SSO)
+- google public key and private key
+- /.well-known/openid-configuration  --> to integrate w/ standard auth of google, github
+- SSO
+- diffn betn Oauth2 and openid connect
+- access token: 1m
+- refresh token: 24h
+
+
+# Prisma
+
 ## Prisma Setup and configuration
 
 ```bash
