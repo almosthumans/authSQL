@@ -1,26 +1,63 @@
 # Auth
-- statefull auth
-- sticky sessions
-- vertical and horz scaling
-- banks use, statefull auth (sessions)
-- not scalable but security
 
-- stateless auth: data to user, jwt encrypt
-- scalable >> secure
-- user can read but should not write
-- asymetric encyption -> stamp 
-- jwks
+## Statefull auth
+- token stored in server(db, server)
+- pros
+    - high security
+    - acces control
+    - remove token to invalidate session
+- cons
+    - hard to scale
+    - load balancing issue
+    - memory usage
+- small to mid apps
+- banking webapps
+- - session invalidation on server side
 
+
+
+## Stateless auth
+- token not stored in server
+- token is shared to user
+- pros
+    - fast
+    - scalable
+- cons
+    - can't force logout
+    - risk , low security
+
+
+## Single Sign-On (SSO)
+- one login gives access to multiple apps
 - 2 standards for auth
-    - openid connect
+    - openid connect (OIDC)
     - SAML
 - openid connect (SSO)
 - google public key and private key
 - /.well-known/openid-configuration  --> to integrate w/ standard auth of google, github
-- SSO
-- diffn betn Oauth2 and openid connect
-- access token: 1m
-- refresh token: 24h
+- access token:
+    - Short-lived token (minutes to hours)
+    - Sent with each request to prove user is authenticated
+    - Used to access APIs/resources
+- refresh token:
+    - Long-lived token (days to weeks)
+    - Not sent with every request
+    - Used only to get a new access token when the old one expires
+
+## Types of tokens
+- JWT
+    - encrypts data w/ payload 
+    - secret key
+    - very secure
+    - encrypt - 2 way process (encryption - decryption)
+- bcryptjs
+    - hashes data
+    - very secure
+    - can't get original again
+    - hashing - 1 way process
+- crypto
+    - generate random bytes
+    - not so secure
 
 
 # Prisma

@@ -45,7 +45,6 @@ Thumbs.db
 
 # Lock files (optional — ignore if you don’t want them tracked)
 yarn.lock
-package-lock.json
 pnpm-lock.yaml
 /generated/prisma
 
